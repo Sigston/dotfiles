@@ -1,0 +1,4 @@
+# EXPORT VALUES
+export TASKRC=~/.config/task/.taskrc
+export TASKDATA=~/.config/task/.task
+

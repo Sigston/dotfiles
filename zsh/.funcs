@@ -1,0 +1,52 @@
+work() {
+	reset
+	printf "
+ _   |~  _
+[_]--'--[_]
+|'|\"\"\`\"\"|\'|
+| | /^\\ | |
+|_|_|I|_|_|
+"
+	cd ~
+    export PS1=$work_prompt
+	task context work > /dev/null
+	task
+	echo -e "\n***WELCOME TO WORK ALEX***\n"
+}
+
+play() {
+	reset
+	export PS1=$casual_prompt
+	echo -e "\n***WELCOME TO PLAY ALEX***\n"
+}
+
+# TODO - add deletion of all very old backups when run
+backup() {
+	today=$(date +"%Y_%m_%d__%R")
+	bpath="/home/alex/Dropbox/backup"
+	# Directories in ~
+	cp -r /home/alex/.password-store ${bpath}/password-store-${today}
+	cp -r /home/alex/.screenlayout ${bpath}/.screenlayout-${today}
+	# .files in ~
+	cp /home/alex/.xinitrc ${bpath}/.xinitrc-${today}
+	cp /home/alex/.Xresources ${bpath}/.Xresources-${today}
+	cp /home/alex/.vimrc ${bpath}/.vimrc-${today}
+	cp /home/alex/.gitconfig ${bpath}/.gitconfig-${today}
+	cp /home/alex/.fehbg ${bpath}/.fehbg-${today}
+	# Directories in .config		
+	cp -r /home/alex/.config/bspwm ${bpath}/.config/bspwm-${today}
+	cp -r /home/alex/.config/nvim ${bpath}/.config/nvim-${today}
+	cp -r /home/alex/.config/picom ${bpath}/.config/picom-${today}
+	cp -r /home/alex/.config/polybar ${bpath}/.config/polybar-${today}
+	cp -r /home/alex/.config/rofi ${bpath}/.config/rofi-${today}
+	cp -r /home/alex/.config/sxhkd ${bpath}/.config/sxhkd-${today}
+	cp -r /home/alex/.config/task ${bpath}/.config/task-${today}
+	cp -r /home/alex/.config/zsh ${bpath}/.config/zsh-${today}
+	# files in .config
+	cp /home/alex/.config/background.png ${bpath}/.config/background-${today}.png
+	echo -e "\nBackup completed\n"
+}
+
+upskill() {
+    ssh -i ~/.ssh/KeyPair.pem ubuntu@3.22.114.192
+}

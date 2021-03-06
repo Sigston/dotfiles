@@ -1,0 +1,8 @@
+#ALIASES
+alias ls='ls --color=auto'
+alias la='ls -a'
+alias l='ls -ltra'
+alias in='task add +in'
+alias nw='vim -c "VimwikiIndex 1"'
+alias nd='vim -c "VimwikiIndex 2"'
+alias np='vim -c "VimwikiIndex 3"'
