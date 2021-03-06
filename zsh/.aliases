@@ -1,7 +1,7 @@
 #ALIASES
 alias ls='ls --color=auto'
 alias la='ls -a'
-alias l='ls -ltra'
+alias l='ls -lah'
 alias in='task add +in'
 alias nw='vim -c "VimwikiIndex 1"'
 alias nd='vim -c "VimwikiIndex 2"'
